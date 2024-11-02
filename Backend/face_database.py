@@ -12,6 +12,10 @@ import firebase_admin
 from firebase_admin import credentials, db
 from keras_facenet import FaceNet
 
+cred = credentials.Certificate('./Configuration/tellodrone-baebd-firebase-adminsdk-v09bs-1b7c673b01.json')
+firebase_admin.initialize_app(cred, {
+    'databaseURL': "https://tellodrone-baebd-default-rtdb.europe-west1.firebasedatabase.app/"
+})
 
 class FaceDatabase:
     def __init__(self, folder='Images'):
